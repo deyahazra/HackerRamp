@@ -8,7 +8,7 @@ import Contact from "../components/Home/contact";
 import Team from "../components/Home/team";
 import About_us from "../components/Home/about_us";
 import AnchorLink from 'react-anchor-link-smooth-scroll'
-import logo from "../../images/Logo.png"
+import logo from "../../images/LOGO2.png"
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { AuthContext } from "../../shared/context/auth-context";
 const navigation = [
