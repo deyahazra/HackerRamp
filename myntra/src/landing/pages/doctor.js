@@ -3,6 +3,7 @@ import PermanentDrawerLeft from "../components/sidebar";
 import "./doctor.css"
 import Profile from "../components/Profile/profile";
 import Dashboard from "../components/Dashboard/dashboard";
+import Notifications from "../components/Dashboard/notifications";
 
 
 const Doctors = () => {
@@ -20,6 +21,7 @@ const Doctors = () => {
          {activeButton === '' ? <div><Dashboard/></div> : null}   
         {activeButton === 'Profile' ? <div><Profile/></div> : null}
         {activeButton === 'Dashboard' ? <div><Dashboard/></div> : null}
+        {activeButton === 'Notifications' ? <div><Notifications/></div> : null}
         </div>
         </div>
     )

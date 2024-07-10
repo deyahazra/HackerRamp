@@ -12,6 +12,7 @@ import Grid from '@mui/material/Grid';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import login from "../../images/login.png";
 
 import LoadingSpinner from '../../shared/components/UIElements/LoadingSpinner';
 import Input from '../../shared/components/FormElements/Input'
@@ -60,7 +61,7 @@ export default function SignInSide() {
         if(isLoginMode) {
             try {
                 const responseData = await sendRequest(
-                    "http://localhost:8000/api/auth/login",
+                    "https://myntrabackend-ip82.onrender.com/api/auth/login",
                     "POST",
                     JSON.stringify({
                         email: formState.inputs.email.value,
@@ -81,7 +82,7 @@ export default function SignInSide() {
         else {
             try {
                 const responseData = await sendRequest(
-                    "http://localhost:8000/api/auth/login/api/auth/signup",
+                    "https://myntrabackend-ip82.onrender.com/api/auth/signup",
                     "POST",
                     JSON.stringify({
                         name: formState.inputs.name.value,
@@ -117,7 +118,7 @@ export default function SignInSide() {
           sm={4}
           md={7.5}
           sx={{
-            backgroundImage: isLoginMode? 'url(https://cdn.dribbble.com/users/2200056/screenshots/11415019/media/e59d2e1588af14e09632b0f88eeedef1.jpg)': 'url(https://cdn.dribbble.com/users/2200056/screenshots/11415019/media/e59d2e1588af14e09632b0f88eeedef1.jpg)',
+            backgroundImage: isLoginMode? `url(${login})`:undefined,
             backgroundRepeat: 'no-repeat',
             backgroundColor: (t) =>
               t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],

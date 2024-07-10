@@ -72,6 +72,10 @@ export default function PermanentDrawerLeft(props) {
         <FontAwesomeIcon icon={faChartLine} style={{ marginRight: '1.7rem' ,color: "#27ae60"}} />
           <span>Dashboard</span>
         </button>
+        <button className={`sidebuttons ${activeButton === 'Notofications' ? 'active' : ''}`} onClick={() => handleButtonClick('Notifications')}>
+        <FontAwesomeIcon icon={faChartLine} style={{ marginRight: '1.7rem' ,color: "#27ae60"}} />
+          <span>Notifications</span>
+        </button>
         <button onClick={handlelogout}className='sidebuttons'style={{ position: 'absolute', bottom: '0', left: '0', right: '0' ,marginBottom:'1rem' }}>
         <FontAwesomeIcon icon={faRightFromBracket} style={{ marginRight: '1.6rem' ,color: "#27ae60"}}/>
           <span>Logout</span>
