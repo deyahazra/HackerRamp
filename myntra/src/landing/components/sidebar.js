@@ -3,13 +3,16 @@ import Drawer from '@mui/material/Drawer';
 import Divider from '@mui/material/Divider';
 import logo from "../../images/Logo.png"
 import "./sidebar.css"
+import { useState } from "react";
 import Swal from "sweetalert2";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Modal from "./modal"
 import {faUser, faChartLine,faHospitalUser ,faCalendarCheck,faWandMagicSparkles, faRightFromBracket} from '@fortawesome/free-solid-svg-icons';
 
 const drawerWidth = 270;
 
 export default function PermanentDrawerLeft(props) {
+  const [open, setOpen] = useState(false);
   const handlelogout = () => {
     Swal.fire({
       title: "Are you sure?",
@@ -36,6 +39,9 @@ export default function PermanentDrawerLeft(props) {
     setActiveButton(buttonName);
     props.getActiveButton(buttonName);
   };
+  const toggleModal = () => {
+    setOpen(!open);
+  }
   return (
     <div className='drawer'>
       <Drawer
@@ -76,10 +82,17 @@ export default function PermanentDrawerLeft(props) {
         <FontAwesomeIcon icon={faChartLine} style={{ marginRight: '1.7rem' ,color: "#27ae60"}} />
           <span>Notifications</span>
         </button>
+          <button className={"sidebuttons "} onClick={toggleModal}>
+          <FontAwesomeIcon icon={faChartLine} style={{ marginRight: '1.7rem' ,color: "#27ae60"}} />
+          <span>Add Friend</span>
+          <Modal open={open} setOpen={setOpen} />
+          </button>
+        
         <button onClick={handlelogout}className='sidebuttons'style={{ position: 'absolute', bottom: '0', left: '0', right: '0' ,marginBottom:'1rem' }}>
         <FontAwesomeIcon icon={faRightFromBracket} style={{ marginRight: '1.6rem' ,color: "#27ae60"}}/>
           <span>Logout</span>
           </button>
+          
       </Drawer>
     </div>
   );
