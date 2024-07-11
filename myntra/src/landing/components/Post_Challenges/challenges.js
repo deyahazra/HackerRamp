@@ -6,11 +6,51 @@ import { useHttpClient } from "../../../shared/components/hooks/http-hook";
 import { AuthContext } from '../../../shared/context/auth-context';
 import { useContext } from "react";
 import { useEffect } from "react";
+import coins from "../../../images/coins.gif"
+import Post from "./post";
+import Vote from "./vote";
 import  Leaderboard  from "./leaderboard";
+import LoadingSpinner from "../../../shared/components/UIElements/LoadingSpinner";
 const Challenges = () => {
+  const auth = useContext(AuthContext);
+  const { isLoading, error, sendRequest, clearError } = useHttpClient();
+  const [data,setData]=useState([]);
+  useEffect(() => {
+    const fetchScore = async () => {
+      // console.log(auth.userId);
+      try {
+        const responseData = await sendRequest(
+          `http://localhost:8000/api/auth/get-score`,
+          'GET',
+          null,
+          {
+            'Content-Type': 'application/json',
+            Authorization: ` ${auth.userId}`
+          }
+        );
+        setData(responseData.score);
+        console.log(responseData.score);
+      } 
+      catch (err) {
+        console.log(err);
+      }
+    };
+    fetchScore();
+  }
+  ,[]);
+
     const [activeTab, setActiveTab] = useState('Leaderboard');
     return(
         <>
+            <div class="mr-10 mt-10 flex justify-end">
+              <span
+                class="inline-flex items-center justify-center rounded-full bg-yellow-300 px-2.5 py-0.5 text-purple-700"
+              >
+                <img src={coins} style={{ width: '1rem', height: '1rem' }} />
+            
+                <p class="whitespace-nowrap text-sm">{data}</p>
+              </span>
+            </div>
         <div className="mt-10 ml-20 mr-20">
         <div className="sm:hidden">
           <label htmlFor="Tab" className="sr-only">Tab</label>
@@ -62,8 +102,8 @@ const Challenges = () => {
 
       {/* Conditional Rendering of Content Based on Active Tab */}
       <div>
-        {activeTab === 'Post' && <div>Post Content Here</div>}
-        {activeTab === 'Vote' && <div>Vote Content Here</div>}
+        {activeTab === 'Post' && <div className="ml-20 mr-20 mt-10 mb-10"><Post/></div>}
+        {activeTab === 'Vote' && <div className="ml-20 mr-20 mt-10"><Vote/></div>}
         {activeTab === 'Duel' && <div>Duel Content Here</div>}
         {activeTab === 'Leaderboard' && <div className="ml-20 mr-20 mt-10"><Leaderboard/></div>}
       </div>
