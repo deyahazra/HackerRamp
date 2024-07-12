@@ -13,6 +13,7 @@ const drawerWidth = 270;
 
 export default function PermanentDrawerLeft(props) {
   const [open, setOpen] = useState(false);
+  const [hasUnreadNotifications, setHasUnreadNotifications] = useState(true);
   const handlelogout = () => {
     Swal.fire({
       title: "Are you sure?",
@@ -38,6 +39,9 @@ export default function PermanentDrawerLeft(props) {
   const handleButtonClick = (buttonName) => {
     setActiveButton(buttonName);
     props.getActiveButton(buttonName);
+    if (buttonName === 'Notifications') {
+      setHasUnreadNotifications(false);
+    }
   };
   const toggleModal = () => {
     setOpen(!open);
@@ -79,8 +83,14 @@ export default function PermanentDrawerLeft(props) {
           <span>Dashboard</span>
         </button>
         <button className={`sidebuttons ${activeButton === 'Notofications' ? 'active' : ''}`} onClick={() => handleButtonClick('Notifications')}>
-        <FontAwesomeIcon icon={faBell} style={{ marginRight: '1.7rem' ,color: "#27ae60"}} />
-          <span>Notifications</span>
+        {hasUnreadNotifications && (
+        <span
+          className="mb-3 inline-block rounded-full bg-red-500"
+          style={{ width: '4px', height: '4px' }}
+        ></span>
+      )}
+        <FontAwesomeIcon icon={faBell} style={{ marginRight: '1.7rem', color: "#27ae60" }} />
+        <span>Notifications</span>
         </button>
           <button className={"sidebuttons "} onClick={toggleModal}>
           <FontAwesomeIcon icon={faUserGroup} style={{ marginRight: '1.7rem' ,color: "#27ae60"}} />

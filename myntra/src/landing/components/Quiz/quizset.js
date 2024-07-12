@@ -50,7 +50,7 @@ function QuizSet() {
         }
     ];
 
-    const handleOptionChange = (questionIndex, optionIndex) => {
+    const handleOptionChange = (optionIndex) => {
         const newSelectedAnswers = [...selectedAnswers];
         newSelectedAnswers[currentStep - 1] = optionIndex;
         setSelectedAnswers(newSelectedAnswers);
@@ -77,8 +77,15 @@ function QuizSet() {
                             <div key={optionIndex}>
                                 <label
                                     className={`bg-orange-100 flex cursor-pointer justify-between gap-4 rounded-lg border border-gray-100 p-4 text-sm font-medium shadow-sm hover:border-gray-200
-                                    ${selectedAnswers[currentStep - 1] === optionIndex && option.isCorrect ? 'bg-green-200' : ''}
-                                    `}
+                                    ${
+                                        selectedAnswers[currentStep - 1] !== null
+                                            ? selectedAnswers[currentStep - 1] === optionIndex
+                                                ? option.isCorrect
+                                                    ? 'bg-green-200'
+                                                    : 'bg-red-200'
+                                                : ''
+                                            : ''
+                                    }`}
                                 >
                                     <div>
                                         <p className="text-gray-700">{option.answer}</p>
@@ -88,7 +95,7 @@ function QuizSet() {
                                         name={`question${questionIndex}`}
                                         className="size-5 bg-orange-200 border-gray-300 text-blue-500"
                                         checked={selectedAnswers[currentStep - 1] === optionIndex}
-                                        onChange={() => handleOptionChange(questionIndex, optionIndex)}
+                                        onChange={() => handleOptionChange(optionIndex)}
                                     />
                                 </label>
                             </div>
@@ -117,3 +124,5 @@ function QuizSet() {
 }
 
 export default QuizSet;
+
+{/*  */}
