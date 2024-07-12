@@ -10,29 +10,6 @@ const Blog2 = () => {
   const [blog, setBlog] = useState([]);
   const auth = useContext(AuthContext);
   const { isLoading, error, sendRequest, clearError } = useHttpClient();
-  useEffect(() => {
-    const fetchBlog = async () => {
-      try {
-        const responseData = await sendRequest(
-          `https://medvita-community-api.onrender.com/api/blogs-tips-yogas/get-blogs`,
-          'GET',
-          null,
-          {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${auth.token}`
-          }
-        );
-        setBlog(responseData.blogs.Blogs);
-        // console.log(responseData);
-      } 
-      catch (err) {
-        console.log(err);
-      }
-    };
-    fetchBlog();
-  }
-  , []);
-  const randomBlogs = [...blog].sort(() => 0.5 - Math.random()).slice(0, 6);
     return(
       
         <div className="bg-white bg-opacity-10 py-24 sm:py-10">

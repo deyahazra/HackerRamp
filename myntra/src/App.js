@@ -2,23 +2,16 @@ import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'r
 import Home from './landing/pages/home';
 import './App.css';
 import Auth from './users/pages/Auth';
-import Doctors from './landing/pages/doctor';
-import Voice_Mental from './landing/components/Mental/voice_Mental';
+import Myntra from './landing/pages/mynta';
 import { AuthContext } from './shared/context/auth-context';
 import { useAuth } from './shared/components/hooks/auth-hook';
 import { AnimatePresence, motion } from 'framer-motion';
-import Yoga_Cam from './landing/components/Post_Challenges/yog_cam';
-import Yoga from './landing/components/Post_Challenges/post_perfect';
 import Pregency from './landing/components/Pregnancy/Pregnancy';
-import Mental from './landing/components/Mental/Mental';
-import CommunityGeneral from './landing/components/Community/communityGen';
-import CommunityEpidemic from './landing/components/Community/communityEpi';
-import CommunityPandemic from './landing/components/Community/communityPan';
-import CommunityPregnency from './landing/components/Community/communityPreg';
-import Chat_Mental from './landing/components/Mental/chat_mental';
 import Product from './landing/components/Dashboard/product';
 import Post_Perfect from './landing/components/Post_Challenges/post_perfect';
 import Challenges from './landing/components/Post_Challenges/challenges';
+import Fashion_Quiz from './landing/components/Quiz/fashionquiz';
+import Quiz from './landing/components/Quiz/quizset';
 
 const RouteTransition = ({ children }) => {
   const location = useLocation();
@@ -41,24 +34,17 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/product" element={<Product />} />
-        <Route path="/chat_mental" element={<Chat_Mental />} />
-        <Route path="/voice_mental" element={<Voice_Mental />} />
-        <Route path="/chat_mental" element={<Chat_Mental />} />
         <Route path="/post_perfect" element={<Post_Perfect/>}/>
         <Route path="/challenges" element={<Challenges/>} />
+        <Route path="/fashion_quiz" element={<Fashion_Quiz/>} /> 
+        <Route path="/quiz-set" element={<Quiz/>} />
         <Route path="/pregnency" element={<Pregency/>}/>
-        <Route path="/community/general" element={<CommunityGeneral/>}/>
-        <Route path="/community/epidemic" element={<CommunityEpidemic/>}/>
-        <Route path="/community/pandemic" element={<CommunityPandemic/>}/>
-        <Route path="/community/pregnency" element={<CommunityPregnency/>}/>
-        <Route path="/mental" element={<Mental />} />
         <Route path="/patients_profile/:patient_id" element={
           <RouteTransition>
           </RouteTransition>
         } />
-        <Route path="/doctors" element={<Doctors />} />
-        <Route path="/yoga_cam" element={<Yoga_Cam />} />
-        <Route path="*" element={<Navigate to="/doctors" />} />
+        <Route path="/myntra" element={<Myntra />} />
+        <Route path="*" element={<Navigate to="/myntra" />} />
       </Routes>
     );
   } else {

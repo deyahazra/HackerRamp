@@ -28,7 +28,7 @@ export default function Post_Modal(props) {
         // console.log(jsonData);
         try{
             const response = await sendRequest(
-                `http://localhost:8000/api/auth/add-post`,
+                `https://myntrabackend-ip82.onrender.com/api/auth/add-post`,
                 'POST',
                 formData,
                 

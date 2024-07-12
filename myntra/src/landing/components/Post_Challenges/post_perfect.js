@@ -1,5 +1,5 @@
 import React,{useState} from "react";
-import "./yoga.css"
+import "./post.css"
 import { useRef } from "react";
 import post_perfect from "../../../images/post_perfect.png"
 import heading from "../../../images/heading.png"
@@ -26,61 +26,6 @@ const Post_Perfect = () => {
   const [rec, setRec] = useState([]);
   const [openModal, setOpenModal] = useState(false)
     const cancelButtonRef = useRef(null)
-    const handleApi = async () => {
-      try {
-        const data = {
-          'first': bodypart,
-          'second': reason,
-      };
-      console.log(typeof(bodypart));
-      console.log(data);
-
-          const response=await sendRequest(
-              `https://med-ai-api.onrender.com/yoga`,
-              'POST',
-              JSON.stringify(data),
-              {
-                  'Content-Type': 'application/json',
-              }
-              );
-              setRefresh2(refresh2+1);
-              localStorage.setItem('refresh2', refresh2);
-              console.log(response);
-              setOpenModal(false);
-              } catch (err) {
-                  console.log(err);
-                  }
-          };
-  
-
-    const handleYoga = (yogaName) => {
-      navigate('/yoga_cam', { state: { yogaName } });
-    }
-    useEffect(() => {
-      const fetchRec = async () => {
-        try {
-          const responseData = await sendRequest(
-            `https://med-ai-api.onrender.com/get_yoga_recommendations`,
-            'GET',
-            null,
-            {
-              'Content-Type': 'application/json',
-            }
-          );
-          setRec(responseData);
-          console.log(responseData);
-        } 
-        catch (err) {
-          console.log(err);
-        }
-      };
-      fetchRec();
-    }
-    , [refresh2]);
-    console.log(refresh2);
-    if (rec.length > 0) {
-      console.log(rec);
-  }
     // const randomRec = [...rec].sort(() => 0.5 - Math.random()).slice(0, 3);
     return (
         <>

@@ -1,5 +1,5 @@
 import React,{useState} from "react";
-import "./yoga.css"
+import "./post.css"
 import { Link } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
 import { useHttpClient } from "../../../shared/components/hooks/http-hook";
@@ -20,7 +20,7 @@ const Challenges = () => {
       // console.log(auth.userId);
       try {
         const responseData = await sendRequest(
-          `http://localhost:8000/api/auth/get-score`,
+          `https://myntrabackend-ip82.onrender.com/api/auth/get-score`,
           'GET',
           null,
           {
@@ -37,7 +37,7 @@ const Challenges = () => {
     };
     fetchScore();
   }
-  ,[]);
+  ,[data]);
 
     const [activeTab, setActiveTab] = useState('Leaderboard');
     return(

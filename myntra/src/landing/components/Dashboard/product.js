@@ -4,9 +4,7 @@ import {useEffect} from "react";
 import { useHttpClient } from "../../../shared/components/hooks/http-hook";
 import { AuthContext } from '../../../shared/context/auth-context';
 import LoadingSpinner from "../../../shared/components/UIElements/LoadingSpinner";
-// import { StarIcon } from '@heroicons/react/solid';
-// import { RadioGroup } from '@headlessui/react';
-// import Radio from '@mui/material/Radio';
+
 import { StarIcon } from '@heroicons/react/20/solid'
 import { RadioGroup } from '@headlessui/react'
 import Radio from '@mui/material/Radio';

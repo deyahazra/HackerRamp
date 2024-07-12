@@ -1,10 +1,6 @@
 import React,{useState} from "react";
 import { Link } from "react-router-dom"; 
 import "./dashboard.css"
-// import yoga from "../../../images/yog_but.png"
-import preg from "../../../images/pregbut.png"
-import chat from "../../../images/chatbut.png"
-// import men from "../../../images/mentbut.png"
 import post from "../../../images/post.png"
 import trend from "../../../images/trend.png"
 import quiz from "../../../images/quiz.png"
@@ -26,7 +22,7 @@ const Dashboard = () => {
           </Link>
           </div>
           <div className="gridbutton h-36 rounded-lg bg-pink-300 bg-opacity-40">
-            <Link to="/community/general">
+            <Link to="/fashion_quiz">
           <img src={quiz} alt="Description of image" className="h-full w-full object-cover rounded-lg" />
           </Link>
           </div>

@@ -48,7 +48,7 @@ export default function PermanentDrawerLeft(props) {
       className='drawer'
       PaperProps={{
         sx: {
-          backgroundColor: "#b7e4e771",
+          backgroundColor: "#eed299c4",
           color: "red",
           borderTopRightRadius: 30,
           borderBottomRightRadius: 30,

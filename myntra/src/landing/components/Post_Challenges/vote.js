@@ -4,7 +4,12 @@ import {useContext} from "react";
 import KeenSlider from 'keen-slider';
 import 'keen-slider/keen-slider.min.css';
 import { Rating } from "@material-tailwind/react";
+import { useHttpClient } from "../../../shared/components/hooks/http-hook";
+import { AuthContext } from '../../../shared/context/auth-context';
 const Vote = () => {
+    const auth = useContext(AuthContext);
+    const { isLoading, error, sendRequest, clearError } = useHttpClient();
+    
     useEffect(() => {
         const keenSlider = new KeenSlider('#keen-slider', {
           loop: true,
@@ -35,6 +40,28 @@ const Vote = () => {
           keenSlider.destroy();
         };
       }, []);
+      const [rating, setRating] = useState(0);
+      const handleRatingClick = async(value) => {
+        setRating(value);
+        const jsonData = JSON.stringify({
+          userId: auth.userId,
+        });
+        try {
+          const responseData = await sendRequest(
+            `https://myntrabackend-ip82.onrender.com/api/auth/give-vote`,
+            'POST',
+            jsonData,
+            {
+              'Content-Type': 'application/json'
+            }
+          );
+          console.log(responseData);
+        } 
+        catch (err) {
+          console.log(err);
+        }
+        
+      };
     
     return(
         <>
@@ -95,7 +122,9 @@ const Vote = () => {
           >
             <div>
               <div className="flex gap-0.5 text-yellow-500">
-              <Rating value={4} />
+              <div onClick={handleRatingClick}>
+                <Rating value={rating} />
+              </div>
               </div>
 
               <div className="mt-4">
@@ -119,7 +148,9 @@ const Vote = () => {
           >
             <div>
             <div className="flex gap-0.5 text-yellow-500">
-              <Rating value={4} />
+            <div onClick={handleRatingClick}>
+                <Rating value={rating} />
+              </div>
               </div>
 
               <div className="mt-4">
@@ -141,7 +172,9 @@ const Vote = () => {
           >
             <div>
             <div className="flex gap-0.5 text-yellow-500">
-              <Rating value={4} />
+            <div onClick={handleRatingClick}>
+                <Rating value={rating} />
+              </div>
               </div>
 
               <div className="mt-4">
