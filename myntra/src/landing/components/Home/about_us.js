@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../../pages/home.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHouseMedical } from '@fortawesome/free-solid-svg-icons'
+
 import { faHandshake } from '@fortawesome/free-solid-svg-icons'
 import { faUser } from '@fortawesome/free-solid-svg-icons'
 import { faMessage } from '@fortawesome/free-solid-svg-icons'
-import appweb from "../../../images/appweb.png"
+import website from "../../../images/websiteee.jpg"
 import { ArrowPathIcon, CloudArrowUpIcon, FingerPrintIcon, LockClosedIcon ,ServerIcon} from '@heroicons/react/24/outline'
 
 export default function About_us() {
@@ -44,7 +44,7 @@ export default function About_us() {
             <div className="lg:max-w-lg">
               <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">About Us</h1>
               <p className="mt-6 text-xl leading-8 text-gray-700">
-              MedVita is an ambitious, all-in-one medical app designed to empower you to take control of your health and well-being. We recognize the complexities of navigating the healthcare landscape, and we're committed to providing a comprehensive and user-friendly platform to support you on your journey.
+              Welcome to Myntra Style Quest, your ultimate destination for fashion curated especially for Gen Z! At Myntra Style Quest, we believe fashion is not just about clothing—it's about creating a community, sharing experiences, and expressing individuality in the most stylish way.
               </p>
             </div>
           </div>
@@ -52,7 +52,7 @@ export default function About_us() {
         <div className="-ml-12 -mt-12 p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
           <img
             className="w-[48rem] max-w-none rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem]"
-            src={appweb}
+            src={website}
             alt=""
           />
         </div>
@@ -60,35 +60,30 @@ export default function About_us() {
           <div className="lg:pr-4">
             <div className="max-w-xl text-base leading-7 text-gray-700 lg:max-w-lg">
               <p>
-              Here's what sets MedVita apart:
+              Here's what sets Myntra Style Quest apart:
               </p>
               <ul role="list" className="mt-8 space-y-8 text-gray-600">
-                <li className="flex gap-x-3">
-                <FontAwesomeIcon className="mt-1 h-5 w-5 flex-none text-indigo-600" aria-hidden="true" icon={faHouseMedical} />
-                  <span>
-                    <strong className="font-semibold text-gray-900">Holistic Approach:</strong> We cover a wide range of health areas, from disease detection and prevention to mental health, fitness, and pregnancy support. Think of us as your one-stop shop for personalized health management.
-                  </span>
-                </li>
+                
                 <li className="flex gap-x-3">
                 <FontAwesomeIcon icon={faHandshake} className="mt-1 h-5 w-5 flex-none text-indigo-600" aria-hidden="true"/>
                   <span>
-                    <strong className="font-semibold text-gray-900">Empowering Features:</strong> Get notified of potential disease surges in your area, track and manage immunizations, set medication reminders, receive personalized health tips, and even connect with nearby doctors and medical shops – all within the app.
+                    <strong className="font-semibold text-gray-900">Social Shopping Integration</strong>Stay connected with your friends while you shop! With our social shopping features, you can add friends, see what items they have wishlisted, and get notified about their latest fashion picks. Share your style, get inspired, and make shopping a fun, collaborative experience.
                   </span>
                 </li>
                 <li className="flex gap-x-3">
                 <FontAwesomeIcon icon={faUser} className="mt-1 h-5 w-5 flex-none text-indigo-600" aria-hidden="true"/>
                   <span>
-                    <strong className="font-semibold text-gray-900">Focus on You:</strong> We go beyond generic advice with features like posture validation for yoga exercises and voice/chat-based emotional detection, offering personalized insights and recommendations tailored to your unique needs.
+                    <strong className="font-semibold text-gray-900">Engaging Challenges</strong> We keep the excitement alive with a range of interactive challenges designed to enhance your engagement. Participate in fashion quizzes to test your style knowledge, post your special looks, and join trending hashtag challenges to showcase your unique flair. Compete, share, and win—there's always something new to try!
                   </span>
                 </li>
                 <li className="flex gap-x-3">
                 <FontAwesomeIcon icon={faMessage} className="mt-1 h-5 w-5 flex-none text-indigo-600" aria-hidden="true"/>
                   <span>
-                    <strong className="font-semibold text-gray-900">Community and Education:</strong> Connect with others, share experiences, and learn from personalized blog recommendations curated to your interests. Build a supportive community and gain valuable knowledge on your health journey.
+                    <strong className="font-semibold text-gray-900">Fashion Community</strong> Myntra Style Quest is more than just a shopping platform; it's a vibrant community where fashion enthusiasts come together. Follow your favorite fashion icons, discover new trends, and be a part of a dynamic group that celebrates individuality and creativity.
                   </span>
                 </li>
               </ul>
-              <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">Join us on our mission to empower individuals to take charge of their health. Sign in here or Download MedVita today and experience the difference!</h2>
+              <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">Join us on Myntra Style Quest and be a part of a fashion revolution that's all about you. Discover, engage, and express your style like never before. Your fashion journey starts here!</h2>
               
             </div>
           </div>

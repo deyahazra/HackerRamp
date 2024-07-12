@@ -5,10 +5,10 @@ import Button from '@mui/material/Button';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import deya from "../../../images/Deya hazra pic.webp"
-import utsav from "../../../images/Utsav_pic.jpg"
-import ssr from "../../../images/ssr_pic.jpg"
+import saranya from "../../../images/saranya21.jpg"
+
 import EmailIcon from '@mui/icons-material/Email';
-import atrij from "../../../images/atrij.jpg"
+
 const people = [
     {
       id: 1,
@@ -21,32 +21,15 @@ const people = [
     },
     {
         id: 2,
-        name: 'Utsav Das',
+        name: 'Saranya Chattopadhyay',
         role: 'Co-Founder / CEO',
-        hrefG: 'https://github.com/utsavdas10',
-        hrefL: 'https://www.linkedin.com/in/utsav-das-323b32227/',
-        hrefM: 'mailto:utsavdas10@gmail.com',
-        imageUrl: utsav,
+        hrefG: 'https://github.com/saranya2644',
+        hrefL: 'https://www.linkedin.com/in/saranya-chattopadhyay-06a153230/',
+        hrefM: 'mailto:saranyac226@gmail.com',
+        imageUrl: saranya,
       },
-      {
-        id: 3,
-        name: 'Swapnodip Singha Roy',
-        role: 'Co-Founder / CEO',
-        hrefG: 'https://github.com/iamssr02',
-        hrefL: 'https://www.linkedin.com/in/swapnodip-singha-roy/',
-        hrefM: 'mailto:swapnodip02.singharoy@gmail.com',
-        imageUrl:ssr
-      },
-      {
-        id: 4,
-        name: 'Atrij Paul',
-        role: 'Co-Founder / CEO',
-        hrefG: 'https://github.com/Atrij-Paul',
-        hrefL: 'https://www.linkedin.com/in/atrij-paul-9a23a6223/',
-        hrefM: 'mailto:atrijpaul2003@gmail.com',
-        imageUrl:
-          atrij
-      },
+     
+     
     // More people...
   ]
 export default function Team  () {
@@ -56,8 +39,7 @@ export default function Team  () {
         <div className="max-w-2xl">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Meet our Team</h2>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            Libero fames augue nisl porttitor nisi, quis. Id ac elit odio vitae elementum enim vitae ullamcorper
-            suspendisse.
+            Discover the creative minds and passionate individuals driving the innovation and style at Myntra Style Quest.
           </p>
         </div>
         <ul role="list" className="grid gap-x-8 gap-y-12 sm:grid-cols-2 sm:gap-y-16 xl:col-span-2">

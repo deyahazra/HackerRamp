@@ -7,41 +7,18 @@ import { MapIcon, EyeIcon, InformationCircleIcon} from '@heroicons/react/24/outl
 import { ChatBubble } from "@mui/icons-material";
 const features = [
     {
-      name: 'Health Radar',
+      name: 'Social shopping integration',
       description:
-        'Get notified of potential surges based on user-reported data.',
+        'Ditch the solo shopping struggle! Squad up with your besties in our app.Have shared wishlists , Get notified when your BFF adds something amazing to theirs. Inspiration guaranteed!Stuck on a pick? Chat with your crew in real-time for instant advice',
       icon: InformationCircleIcon,
     },
     {
-      name: 'Personalized Health Tracking',
+      name: 'Engagement on shopping platform',
       description:
-        'Manage immunizations, medication, menstrual cycles, & yoga postures.',
+        'Dive into daily/weekly fashion challenges like "Style a summer festival look" or "Recreate a celebrity outfit" to earn "Super Coins.". You can even have a fashion duel with your squad.Post your creations, vote on others outfits,and climb the leaderboard',
       icon: InformationCircleIcon,
     },
-    {
-      name: 'Emotional Well-being:',
-      description:
-        'Confide in our AI assistant for support & personalized advice.',
-      icon: InformationCircleIcon,
-    },
-    {
-      name: 'Connect & Find Care',
-      description:
-        'Discover nearby doctors, clinics, & pharmacies, plus relevant health articles.',
-      icon:InformationCircleIcon ,
-    },
-    {
-      name: 'Community Support',
-      description:
-        'Share experiences, ask questions, & connect with others on their health journeys.',
-      icon:InformationCircleIcon ,
-    },
-    {
-      name: 'Pregnancy & Sexual Health Support ',
-      description:
-        'Access tips, guidance, & discreet information.',
-      icon: InformationCircleIcon,
-    },
+
   ]
 const Services = () => {
     return(
@@ -49,10 +26,10 @@ const Services = () => {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
           <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Services we provide
+            Features we provide
           </p>
-          <p className="mt-6 text-lg leading-8 text-gray-600">
-          MedVita goes beyond a simple app – it's a gateway to a healthier you. Here's a glimpse of the diverse services we offer:
+          <p className="mt-6 text-lg leading-8 text-gray-900">
+          Myntra Style Quest goes beyond a simple fashion site – it's a site designed especially for the Gen-Z fashion enthusiasts. Here are some of the features we provide:
           </p>
         </div>
         <div className="services">
@@ -61,7 +38,7 @@ const Services = () => {
             {features.map((feature) => (
               <div key={feature.name} className="relative pl-16">
                 <dt className="text-base font-semibold leading-7 text-gray-900">
-                  <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-orange-600">
+                  <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-orange-400">
                     <feature.icon className="h-6 w-6 text-white" aria-hidden="true" />
                   </div>
                   {feature.name}

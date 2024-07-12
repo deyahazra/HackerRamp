@@ -120,7 +120,7 @@ const Home = () => {
       <div>{About_us()}</div>
         </div>
     </section>
-    <section id='services'>
+    <section id='features'>
       <div className="services">
       <div>{Services()}</div>
         </div>
