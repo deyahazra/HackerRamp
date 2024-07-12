@@ -6,6 +6,7 @@ import { ExclamationTriangleIcon } from '@heroicons/react/24/outline'
 import { useHttpClient } from "../../shared/components/hooks/http-hook";
 import{useContext} from 'react';
 import { AuthContext } from '../../shared/context/auth-context';
+import Swal from 'sweetalert2';
 export default function Modal(props) {
     const { isLoading, error, sendRequest, clearError } = useHttpClient();
     const [friendEmail, setFriendEmail] = useState('');
@@ -26,7 +27,13 @@ export default function Modal(props) {
                 }
             );
             console.log(response);
-            
+            Swal.fire({
+              position: "top-end",
+              icon: "success",
+              title: "Added your friend successfully!",
+              showConfirmButton: false,
+              timer: 1500
+            });
         }
         catch(err){
             console.log(err);

@@ -1,13 +1,13 @@
 import * as React from 'react';
 import Drawer from '@mui/material/Drawer';
 import Divider from '@mui/material/Divider';
-import logo from "../../images/Logo.png"
+import logo from "../../images/LOGO2.png"
 import "./sidebar.css"
 import { useState } from "react";
 import Swal from "sweetalert2";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Modal from "./modal"
-import {faUser, faChartLine,faHospitalUser ,faCalendarCheck,faWandMagicSparkles, faRightFromBracket} from '@fortawesome/free-solid-svg-icons';
+import {faUser, faChartLine,faBell, faRightFromBracket, faUserGroup} from '@fortawesome/free-solid-svg-icons';
 
 const drawerWidth = 270;
 
@@ -79,11 +79,11 @@ export default function PermanentDrawerLeft(props) {
           <span>Dashboard</span>
         </button>
         <button className={`sidebuttons ${activeButton === 'Notofications' ? 'active' : ''}`} onClick={() => handleButtonClick('Notifications')}>
-        <FontAwesomeIcon icon={faChartLine} style={{ marginRight: '1.7rem' ,color: "#27ae60"}} />
+        <FontAwesomeIcon icon={faBell} style={{ marginRight: '1.7rem' ,color: "#27ae60"}} />
           <span>Notifications</span>
         </button>
           <button className={"sidebuttons "} onClick={toggleModal}>
-          <FontAwesomeIcon icon={faChartLine} style={{ marginRight: '1.7rem' ,color: "#27ae60"}} />
+          <FontAwesomeIcon icon={faUserGroup} style={{ marginRight: '1.7rem' ,color: "#27ae60"}} />
           <span>Add Friend</span>
           <Modal open={open} setOpen={setOpen} />
           </button>

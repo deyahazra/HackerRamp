@@ -4,33 +4,35 @@ import {useEffect} from "react";
 import { useHttpClient } from "../../../shared/components/hooks/http-hook";
 import { AuthContext } from '../../../shared/context/auth-context';
 import LoadingSpinner from "../../../shared/components/UIElements/LoadingSpinner";
-
+import pro1 from "../../../images/productimg1.jpg"
+import pro2 from "../../../images/productimg2.jpg"
+import pro3 from "../../../images/productimg3.jpg"
+import pro4 from "../../../images/productimg4.jpg"
 import { StarIcon } from '@heroicons/react/20/solid'
-import { RadioGroup } from '@headlessui/react'
-import Radio from '@mui/material/Radio';
+import Swal from 'sweetalert2';
 const product = {
-    name: 'Basic Tee 6-Pack',
-    price: '$192',
+    name: 'Nike | Unisex Street Style Bi-color Logo Sneakers',
+    price: '$298 USD',
     href: '#',
     breadcrumbs: [
       { id: 1, name: 'Men', href: '#' },
-      { id: 2, name: 'Clothing', href: '#' },
+      { id: 2, name: 'Shoes', href: '#' },
     ],
     images: [
       {
-        src: 'https://tailwindui.com/img/ecommerce-images/product-page-02-secondary-product-shot.jpg',
+        src: pro1,
         alt: 'Two each of gray, white, and black shirts laying flat.',
       },
       {
-        src: 'https://tailwindui.com/img/ecommerce-images/product-page-02-tertiary-product-shot-01.jpg',
+        src: pro2,
         alt: 'Model wearing plain black basic tee.',
       },
       {
-        src: 'https://tailwindui.com/img/ecommerce-images/product-page-02-tertiary-product-shot-02.jpg',
+        src: pro3,
         alt: 'Model wearing plain gray basic tee.',
       },
       {
-        src: 'https://tailwindui.com/img/ecommerce-images/product-page-02-featured-product-shot.jpg',
+        src: pro4,
         alt: 'Model wearing plain white basic tee.',
       },
     ],
@@ -50,15 +52,15 @@ const product = {
       { name: '3XL', inStock: true },
     ],
     description:
-      'The Basic Tee 6-Pack allows you to fully express your vibrant personality with three grayscale options. Feeling adventurous? Put on a heather gray tee. Want to be a trendsetter? Try our exclusive colorway: "Black". Need to add an extra pop of color to your outfit? Our white tee has you covered.',
+      'DUNK Sneakers from Nike, Street Style, Unisex, Street Style, Logo, Bi-color, 2019-20FW',
     highlights: [
-      'Hand cut and sewn locally',
-      'Dyed with our proprietary colors',
-      'Pre-washed & pre-shrunk',
-      'Ultra-soft 100% cotton',
+      'Model: DUNK Sneakers',
+      'Style: Street Style',
+      'Design Features: Street Style, Logo, Bi-color',
+      'Collection: 2019-20 Fall/Winter (FW)',
     ],
     details:
-      'The 6-Pack includes two black, two white, and two heather gray Basic Tees. Sign up for our subscription service and be the first to get new, exciting colors, like our upcoming "Charcoal Gray" limited release.',
+      "The DUNK Sneakers from Nike, part of the 2019-20 Fall/Winter collection, are a versatile addition to any streetwear wardrobe. Designed with a unisex appeal, these sneakers embody the essence of street style with their bold bi-color design and prominent logo detailing. Perfect for those who want to make a statement, the DUNK Sneakers seamlessly blend fashion and functionality, offering both comfort and a distinctive look. Whether you're hitting the streets or making a fashion-forward appearance, these sneakers are the ideal choice for showcasing your style.",
   }
 
   const reviews = { href: '#', average: 4, totalCount: 117 }
@@ -88,6 +90,13 @@ const product = {
                 }
             )
             console.log(responseData);
+            Swal.fire({
+              position: "top-end",
+              icon: "success",
+              title: "Added to your wishlist! 🥳🎇❤️",
+              showConfirmButton: false,
+              timer: 1500
+            });
         }
         catch(err) {
             console.log(err);

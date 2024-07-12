@@ -6,6 +6,7 @@ import { ExclamationTriangleIcon } from '@heroicons/react/24/outline'
 import { useHttpClient } from "../../../shared/components/hooks/http-hook";
 import{useContext} from 'react';
 import { AuthContext } from '../../../shared/context/auth-context';
+import Swal from 'sweetalert2';
 export default function Post_Modal(props) {
     const { isLoading, error, sendRequest, clearError } = useHttpClient();
     const [selectedFile, setSelectedFile] = useState(null);
@@ -34,6 +35,13 @@ export default function Post_Modal(props) {
                 
             );
             props.onResponse(response)
+            Swal.fire({
+              position: "top-end",
+              icon: "success",
+              title: "Post Submitted successfully!",
+              showConfirmButton: false,
+              timer: 1500
+            });
             // console.log(response);
             
         }
