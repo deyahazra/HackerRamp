@@ -6,6 +6,9 @@ import 'keen-slider/keen-slider.min.css';
 import { Rating } from "@material-tailwind/react";
 import { useHttpClient } from "../../../shared/components/hooks/http-hook";
 import { AuthContext } from '../../../shared/context/auth-context';
+import selfie from '../../../images/vote.png'
+import mirror from '../../../images/voting.png'
+import half from '../../../images/votee.png'
 const Vote = () => {
     const auth = useContext(AuthContext);
     const { isLoading, error, sendRequest, clearError } = useHttpClient();
@@ -129,7 +132,7 @@ const Vote = () => {
 
               <div className="mt-4">
               <img
-                src="https://images.unsplash.com/photo-1592921870789-04563d55041c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+                src={mirror}
                 alt=""
                 className="aspect-square w-full rounded object-cover"
                 />
@@ -137,7 +140,7 @@ const Vote = () => {
             </div>
 
             <footer className="mt-4 text-sm font-medium text-gray-700 sm:mt-6">
-              &mdash; Michael Scott
+              &mdash; Ruby Leigh
             </footer>
           </blockquote>
         </div>
@@ -155,14 +158,14 @@ const Vote = () => {
 
               <div className="mt-4">
               <img
-                src="https://images.unsplash.com/photo-1592921870789-04563d55041c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+                src={selfie}
                 alt=""
                 className="aspect-square w-full rounded object-cover"
                 />
               </div>
             </div>
             <footer className="mt-4 text-sm font-medium text-gray-700 sm:mt-6">
-              &mdash; Michael Scott
+              &mdash; Lily Bloom
             </footer>
           </blockquote>
         </div>
@@ -179,7 +182,7 @@ const Vote = () => {
 
               <div className="mt-4">
               <img
-                src="https://images.unsplash.com/photo-1592921870789-04563d55041c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+                src={half}
                 alt=""
                 className="aspect-square w-full rounded object-cover"
                 />
@@ -187,7 +190,7 @@ const Vote = () => {
             </div>
 
             <footer className="mt-4 text-sm font-medium text-gray-700 sm:mt-6">
-              &mdash; Michael Scott
+              &mdash; Jules Volkov
             </footer>
           </blockquote>
         </div>
