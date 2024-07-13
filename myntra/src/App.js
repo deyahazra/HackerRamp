@@ -6,7 +6,7 @@ import Myntra from './landing/pages/mynta';
 import { AuthContext } from './shared/context/auth-context';
 import { useAuth } from './shared/components/hooks/auth-hook';
 import { AnimatePresence, motion } from 'framer-motion';
-import Pregency from './landing/components/Pregnancy/Pregnancy';
+import Trendsetter from './landing/components/TrendSetter/trendsetter';
 import Product from './landing/components/Dashboard/product';
 import Post_Perfect from './landing/components/Post_Challenges/post_perfect';
 import Challenges from './landing/components/Post_Challenges/challenges';
@@ -38,7 +38,7 @@ function App() {
         <Route path="/challenges" element={<Challenges/>} />
         <Route path="/fashion_quiz" element={<Fashion_Quiz/>} /> 
         <Route path="/quiz-set" element={<Quiz/>} />
-        <Route path="/pregnency" element={<Pregency/>}/>
+        <Route path="/trendsetter" element={<Trendsetter/>}/>
         <Route path="/patients_profile/:patient_id" element={
           <RouteTransition>
           </RouteTransition>

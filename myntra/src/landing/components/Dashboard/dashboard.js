@@ -17,7 +17,7 @@ const Dashboard = () => {
           </Link>
         </div>
           <div className="gridbutton h-36 rounded-lg bg-red-200 bg-opacity-90">
-            <Link to="/pregnency">
+            <Link to="/trendsetter">
           <img src={trend} alt="Description of image" className="h-full w-full object-cover rounded-lg" />
           </Link>
           </div>

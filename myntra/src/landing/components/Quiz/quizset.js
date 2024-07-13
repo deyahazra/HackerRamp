@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 
 function QuizSet() {
     const totalSteps = 5;
-    const [currentStep, setCurrentStep] = useState(1); // Starting at step 1
-    const [selectedAnswers, setSelectedAnswers] = useState(Array(totalSteps).fill(null)); // Track selected answers
+    const [currentStep, setCurrentStep] = useState(1);
+    const [selectedAnswers, setSelectedAnswers] = useState(Array(totalSteps).fill(null));
+    const [isSubmitted, setIsSubmitted] = useState(false);
+    const [score, setScore] = useState(0);
 
     const progressWidth = `${(currentStep / totalSteps) * 100}%`;
 
@@ -56,6 +58,17 @@ function QuizSet() {
         setSelectedAnswers(newSelectedAnswers);
     };
 
+    const handleSubmit = () => {
+        let newScore = 0;
+        selectedAnswers.forEach((answerIndex, questionIndex) => {
+            if (answerIndex !== null && ques[questionIndex].options[answerIndex].isCorrect) {
+                newScore++;
+            }
+        });
+        setScore(newScore);
+        setIsSubmitted(true);
+    };
+
     return (
         <div>
             <div className="mt-10 mr-20 ml-20 overflow-hidden rounded-full bg-gray-200">
@@ -76,7 +89,7 @@ function QuizSet() {
                         {q.options.map((option, optionIndex) => (
                             <div key={optionIndex}>
                                 <label
-                                    className={`bg-orange-100 flex cursor-pointer justify-between gap-4 rounded-lg border border-gray-100 p-4 text-sm font-medium shadow-sm hover:border-gray-200
+                                    className={`flex cursor-pointer justify-between gap-4 rounded-lg border border-gray-100 p-4 text-sm font-medium shadow-sm hover:border-gray-200
                                     ${
                                         selectedAnswers[currentStep - 1] !== null
                                             ? selectedAnswers[currentStep - 1] === optionIndex
@@ -114,15 +127,37 @@ function QuizSet() {
                 <button
                     className='mt-10 bg-pink-500 rounded-md p-2'
                     onClick={() => setCurrentStep(currentStep + 1)}
-
+                    disabled={currentStep === totalSteps}
                 >
-                    {currentStep === totalSteps ? 'Submit' : 'Next'}
+                    Next
                 </button>
+                {currentStep === totalSteps && (
+                    <button
+                        className='mt-10 bg-green-500 rounded-md p-2'
+                        onClick={handleSubmit}
+                        disabled={isSubmitted}
+                    >
+                        Submit
+                    </button>
+                )}
             </div>
+            {isSubmitted && (
+                <div className="text-center mt-10">
+                    <h2 className="text-2xl font-bold">Your Score: {score}/{totalSteps}</h2>
+                </div>
+            )}
         </div>
     );
 }
 
 export default QuizSet;
 
-{/*  */}
+
+
+{/* <button
+                    className='mt-10 bg-pink-500 rounded-md p-2'
+                    onClick={() => setCurrentStep(currentStep + 1)}
+
+                >
+                    {currentStep === totalSteps ? 'Submit' : 'Next'}
+                </button> */}
