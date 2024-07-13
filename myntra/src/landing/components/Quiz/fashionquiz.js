@@ -89,6 +89,7 @@ const Fashion_Quiz = () => {
           </div>
           </Link>
           <div className="group relative block bg-black">
+            <Link to="/quiz-set2">
           <img
             alt=""
             src={asthetic}
@@ -110,6 +111,7 @@ const Fashion_Quiz = () => {
               </div>
             </div>
           </div>
+          </Link>
         </div>
           </div>
         ) : (

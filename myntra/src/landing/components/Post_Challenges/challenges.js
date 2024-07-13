@@ -62,7 +62,6 @@ const Challenges = () => {
           >
             <option value="Post">Post</option>
             <option value="Vote">Vote</option>
-            <option value="Duel">Duel</option>
             <option value="Leaderboard">Leaderboard</option>
           </select>
         </div>
@@ -84,12 +83,6 @@ const Challenges = () => {
                 Vote
               </div>
               <div
-                className={`shrink-0 border border-transparent p-3 text-lg font-medium ${activeTab === 'Duel' ? 'text-sky-600 border-b-2 border-sky-600 shrink-0 rounded-t-lg border border-gray-300 border-b-white p-3 text-lg font-medium' : 'text-gray-500 hover:text-gray-700'}`}
-                onClick={() => setActiveTab('Duel')}
-              >
-                Duel
-              </div>
-              <div
                 className={`shrink-0 border border-transparent p-3 text-lg font-medium ${activeTab === 'Leaderboard' ? 'text-sky-600 border-b-2 border-sky-600 shrink-0 rounded-t-lg border border-gray-300 border-b-white p-3 text-lg font-medium' : 'text-gray-500 hover:text-gray-700'}`}
                 onClick={() => setActiveTab('Leaderboard')}
               >
@@ -104,7 +97,6 @@ const Challenges = () => {
       <div>
         {activeTab === 'Post' && <div className="ml-20 mr-20 mt-10 mb-10"><Post/></div>}
         {activeTab === 'Vote' && <div className="ml-20 mr-20 mt-10"><Vote/></div>}
-        {activeTab === 'Duel' && <div>Duel Content Here</div>}
         {activeTab === 'Leaderboard' && <div className="ml-20 mr-20 mt-10"><Leaderboard/></div>}
       </div>
         </>

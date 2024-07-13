@@ -1,5 +1,5 @@
 import React from "react";
-import "./pregnency.css"
+import "./trend.css"
 import hashtags from "../../../images/hashtags.png"
 import trendsetter from "../../../images/trendsetter.png"
 import Trend_Modal from "./trend_modal";

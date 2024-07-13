@@ -12,6 +12,8 @@ import Post_Perfect from './landing/components/Post_Challenges/post_perfect';
 import Challenges from './landing/components/Post_Challenges/challenges';
 import Fashion_Quiz from './landing/components/Quiz/fashionquiz';
 import Quiz from './landing/components/Quiz/quizset';
+import QuizSet2 from './landing/components/Quiz/quizset2';
+import QuizSet from './landing/components/Quiz/quizset';
 
 const RouteTransition = ({ children }) => {
   const location = useLocation();
@@ -37,7 +39,8 @@ function App() {
         <Route path="/post_perfect" element={<Post_Perfect/>}/>
         <Route path="/challenges" element={<Challenges/>} />
         <Route path="/fashion_quiz" element={<Fashion_Quiz/>} /> 
-        <Route path="/quiz-set" element={<Quiz/>} />
+        <Route path="/quiz-set" element={<QuizSet/>} />
+        <Route path="/quiz-set2" element={<QuizSet2/>} />
         <Route path="/trendsetter" element={<Trendsetter/>}/>
         <Route path="/patients_profile/:patient_id" element={
           <RouteTransition>
