@@ -118,7 +118,7 @@ export default function SignInSide() {
           sm={4}
           md={7.5}
           sx={{
-            backgroundImage: isLoginMode? `url(${login})`:undefined,
+            backgroundImage: isLoginMode ? `url(${login})` : `url(${login})`,
             backgroundRepeat: 'no-repeat',
             backgroundColor: (t) =>
               t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
