@@ -52,7 +52,7 @@ const Post = () => {
 </section>
 {responseData && (
   <section>
-    My posts
+    <h1 className="text-4xl text-pink-600"style={{ fontWeight: 'bold', margin: '20px 0' }}>My Posts</h1>
     <div className="flex flex-wrap justify-left gap-4">
       <div className="block w-1/2">
         <img
